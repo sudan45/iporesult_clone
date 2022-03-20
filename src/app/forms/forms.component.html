@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row align-items-center">
+    <div
+      class="container algin-items-center card shadow-lg p-3 mb-5"
+      style="width: 400px; margin-top: 100px"
+    >
+      <div class="d-flex justify-content-center">
+        <img [src]="brand_image" />
+      </div>
+      <p class="text-white text-center">Check Share Result</p>
+      <form class="p-4">
+        <div>
+          <input class="form-control" type="text" />
+          <br />
+          <input
+            class="form-control"
+            type="number"
+            minlength="16"
+            maxlength="16"
+            placeholder="16-digit BOID"
+          />
+        </div>
+        <div>
+          <button
+            class="btn mt-3 btn-block w-100"
+            type="submit"
+            style="background: #5e6ea7; color: white"
+          >
+            View Result
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
