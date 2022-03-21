@@ -1,3 +1,5 @@
+
+
 <div class="container">
   <div class="row align-items-center">
     <div class="container algin-items-center card shadow-lg p-3 mb-5" style="width: 400px; margin-top: 100px">
@@ -5,18 +7,18 @@
         <img [src]="brand_image" />
       </div>
       <p class="text-white text-center">Check Share Result</p>
-      <form class="p-4" #iporesult="ngForm" (ngSubmit)="checkresult(iporesult.value)">
+      <form  class="p-4" [formGroup]="iporesult" (ngSubmit)="ipo_result()">
         <div>
-          <select class="form-control"  placeholder="Select Company">
-            <option required #company="ngModel" name="company" ngModel *ngFor="let item of data_company['body']" [ngValue]="item.id" >
+          <select class="form-control"  placeholder="Select Company" formControlName="companyShareId">
+            <option  *ngFor="let item of companies" [value]="item.id">
               {{ item.name }}
             </option>
           </select>
           <br />
-          <input #boid="ngModel" ngModel type="number" class="form-control" minlength="16" required="required" name="boid" placeholder="16-digit BOID">
+          <input   type="number" class="form-control" minlength="16"  formControlName="boid" placeholder="16-digit BOID">
         </div>
         <div>
-          <button [disabled]="iporesult.invalid" class="btn mt-3 btn-block w-100"  type="submit"
+          <button class="btn mt-3 btn-block w-100"  type="submit"
             style="background: #5e6ea7; color: white">
             View Result
           </button>
